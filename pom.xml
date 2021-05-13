@@ -16,12 +16,42 @@
 
     <build>
         <plugins>
+            <!--<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>com.arminzheng.observer.WeatherStation</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>-->
+
+            <!--
+
+            Note：mvn插件的代码入口是@Mojo注解类的execute方法，在该方法入口（org.apache.maven.plugins.shade.mojo.ShadeMojo line385）打个断点;
+
+            Note：在org.apache.maven.plugins.shade.DefaultShader line539 有下面代码：
+            sourceContent = relocator.applyToSourceContent( sourceContent );
+            这个relocator会在打包过程中，修改类的包名。
+
+            1、在项目中新增一个模块 b-shade ,里边什么代码都没有，只有一个<dependency>b</dependency>,然后配置maven-shade-plugin.
+            让模块 b-shade 用 maven-shade-plugin 打包，同时打包的时候规定将com.google.common包名改为headfirst.com.google.common。
+
+            3、然后在c的pom文件中删除b的依赖，改为依赖b-shade.然后在根目录执行mvn package。
+
+            4、最后的最后，使用luyten-0.5.3打开package-test-c-1.0-SNAPSHOT.jar，发现b中的import语句已经被修改为import headfirst.com.google.common.base.*;
+            -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.2.1</version>
                 <executions>
                     <execution>
+                        <!-- 插件把自己绑在 package 这一步，执行shade:shade（"插件":"goal"） 这个goal                       -->
                         <phase>package</phase>
                         <goals>
                             <goal>shade</goal>

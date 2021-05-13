@@ -1,0 +1,9 @@
+.for .forr
+.null .notnull .nn
+.if .not.if
+.new .var .val .field
+.format
+.synchronized
+.cast .castvar
+.try .throw
+.return
