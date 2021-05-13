@@ -1,4 +1,7 @@
-package com.arminzheng.observer;
+package com.arminzheng.observer.service.impl;
+
+import com.arminzheng.observer.service.Observer;
+import com.arminzheng.observer.service.Subject;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,8 @@
-package com.arminzheng.observer;
+package com.arminzheng.observer.service.impl;
+
+import com.arminzheng.observer.service.DisplayElement;
+import com.arminzheng.observer.service.Observer;
+import com.arminzheng.observer.service.Subject;
 
 /**
  * @author Armin Zheng
