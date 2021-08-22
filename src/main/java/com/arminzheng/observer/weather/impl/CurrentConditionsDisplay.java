@@ -1,17 +1,17 @@
-package com.arminzheng.observer.service.impl;
+package com.arminzheng.observer.weather.impl;
 
-import com.arminzheng.observer.service.DisplayElement;
-import com.arminzheng.observer.service.Observer;
-import com.arminzheng.observer.service.Subject;
+import com.arminzheng.observer.weather.DisplayElement;
+import com.arminzheng.observer.weather.Observer;
+import com.arminzheng.observer.weather.Subject;
 
 /**
  * @author Armin Zheng
  * @since 2021-05-12
  */
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
+    private final Subject weatherData;
     private float temperature;
     private float humidity;
-    private Subject weatherData;
 
     public CurrentConditionsDisplay(Subject weatherData) {
         this.weatherData = weatherData;

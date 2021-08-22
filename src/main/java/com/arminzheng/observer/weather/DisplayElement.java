@@ -1,4 +1,4 @@
-package com.arminzheng.observer.service;
+package com.arminzheng.observer.weather;
 
 /**
  * @author Armin Zheng

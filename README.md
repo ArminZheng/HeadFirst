@@ -1,7 +1,10 @@
 # 设计模式
 ## 观察者模式 Observer
-- 插件：apache-maven-shade 的打包;
-- idea 的非 spring 程序的 jar 打包：
-  - Artifacts - add jar - from modules with dependencies - choose main class
-  - idea window choose the Build - Build Artifacts... - Build
-- 快捷键：idea 关于"."的快捷方式；
+- 最重要的代码是
+  - 观察者接口Observer实现类的构造方法会传入主题，并用这个主题注册自身：
+```java
+public CurrentConditionsDisplay(Observable observable) {
+    this.observable = observable;
+    observable.addObserver(this);
+}
+```
