@@ -12,6 +12,9 @@ public class HeatIndexDisplay implements Observer, DisplayElement {
     private float heatIndex = 0.0f;
     private Subject weatherData;
 
+    public HeatIndexDisplay() {
+    }
+
     public HeatIndexDisplay(Subject weatherData) {
         this.weatherData = weatherData;
         weatherData.registerObserver(this);
