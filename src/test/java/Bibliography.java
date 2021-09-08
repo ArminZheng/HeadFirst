@@ -14,4 +14,8 @@ public abstract class Bibliography {
         this.HH = hh;
         System.out.println(HH);
     }
+
+    public static void PrintLove(){
+        System.out.println("i love u");
+    }
 }
