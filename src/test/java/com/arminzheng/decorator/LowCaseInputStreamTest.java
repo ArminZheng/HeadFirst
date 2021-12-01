@@ -1,14 +1,29 @@
 package com.arminzheng.decorator;
 
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
 import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-/**
- * @author Armin Zheng
- * @since 2021-09-08
- */
-public class LowCaseInputStream extends FilterInputStream {
+public class LowCaseInputStreamTest {
+    public static void main(String[] args) {
+        int c;
+        try {
+            LowCaseInputStream in = new LowCaseInputStream(
+                    new BufferedInputStream(
+                            new FileInputStream("test.txt")
+                    ));
+            while ((c = in.read()) > 0) {
+                System.out.print((char) c);
+            }
+            in.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+class LowCaseInputStream extends FilterInputStream {
     /**
      * Creates a <code>FilterInputStream</code>
      * by assigning the  argument <code>in</code>
