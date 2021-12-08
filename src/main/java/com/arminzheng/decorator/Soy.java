@@ -12,7 +12,9 @@ public class Soy extends CondimentDecorator {
 
     @Override
     public double cost() {
-        return .12 + beverage.cost();
+        // 先将装饰类组合的抽象类的方法执行了。（这里的抽象类，在执行过程中被构造器赋值了）
+        // 再执行自己装饰类本身的小九九。
+        return beverage.cost() + .12;
     }
 
     @Override
