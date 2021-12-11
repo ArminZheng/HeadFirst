@@ -1,1 +1,13 @@
 This is My Test File O~
+每个对象都有一把锁，sleep不会释放锁
+sleep可以放大问题的发生性
+每个线程都有自己的工作内存
+synchronized 方法 控制this 对象的访问（也可以控制块） ，每个对象对应一把锁。方法执行就会独占锁
+
+synchronized锁块，synchronized(xxx 这里一定要锁变化的对象 ){
+
+}
+
+管程：Monitor 就是一种同步机制，每个对象实例都会有一个Monitor对象，一同创建一同销毁。（也就是我们说的锁）
+
+JVM中同步是基于进入和退出监视器对象来实现的

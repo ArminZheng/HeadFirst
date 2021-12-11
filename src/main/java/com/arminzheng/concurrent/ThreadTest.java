@@ -1,4 +1,4 @@
-package com.arminzheng.observer;
+package com.arminzheng.concurrent;
 
 /**
  * @author Armin Zheng
