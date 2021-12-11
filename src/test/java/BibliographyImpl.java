@@ -5,8 +5,8 @@
 public class BibliographyImpl extends Bibliography {
 
     /**
-     * 如果父类抽象类中含有 有参构造函数，在子类继承是就必须写一个构造函数来调用父类的构造函数;
-     * 如果父类抽象类中没有 有参构造函数，在子类中可以不显示的写父类的构造函数，Java会自动生成并调用没有参数的构造函数;
+     * 如果父类抽象类 has 有参构造函数，在子类继承就 must be 写一个构造函数来调用父类的构造函数;
+     * 如果父类抽象类 has not 有参构造函数，在子类中可以不显示的写父类的构造函数，Java会自动生成 并调用没有参数的构造函数;
      *
      * @param hh (´▽`ʃ♡ƪ)
      */
@@ -25,7 +25,9 @@ public class BibliographyImpl extends Bibliography {
     }
 
     public static void main(String[] args) {
+        // 子类构造器会默认执行父抽象类构造器
         new BibliographyImpl();
+
         new BibliographyImpl("happy", 1);
         Bibliography.PrintLove();
     }

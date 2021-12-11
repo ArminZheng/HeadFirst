@@ -7,6 +7,7 @@ public class OuterClass {
     static String staticOuterField = "Static outer field";
 
     class InnerClass {
+        // 内部类
         void accessMembers() {
             System.out.println(outerField);
             System.out.println(staticOuterField);
@@ -14,6 +15,7 @@ public class OuterClass {
     }
 
     static class StaticNestedClass {
+        // 静态内部类
         void accessMembers(OuterClass outer) {
             // Compiler error: Cannot make a static reference to the non-static
             //     field outerField

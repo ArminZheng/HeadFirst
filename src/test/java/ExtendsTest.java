@@ -20,6 +20,8 @@ class Parent {
 
     public void show() {
         System.out.println(this.getClass().getName());
+        System.out.println(super.getClass().getName());
+        // 全都"该对象的运行时类"
     }
 
     public void add() {
@@ -39,6 +41,7 @@ class Child extends Parent {
     public int a = 1024;
 
     public void show() {
+        // getClass()是在Object上声明的final方法。 getClass具有说明文件“返回此对象的运行时类”
         System.out.println(super.getClass().getName());
         super.show();
     }
@@ -48,5 +51,6 @@ class Child extends Parent {
         add();
         super.add();
         System.out.println("son: a = " + a);
+        System.out.println("super.a = " + super.a);
     }
 }

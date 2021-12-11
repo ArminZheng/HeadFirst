@@ -26,7 +26,7 @@ public class Synchronization {
         t3.join();
         t4.join();
 
-        // t1.start();t1.join();  // 其实就是顺序执行
+        // t1.start();t1.join();  // 其实就是顺序执行  ｜｜ --> |/
         // t2.start();t2.join();
         // t3.start();t3.join();
         // t4.start();t4.join();
