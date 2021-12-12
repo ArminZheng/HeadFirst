@@ -11,3 +11,7 @@ synchronized锁块，synchronized(xxx 这里一定要锁变化的对象 ){
 管程：Monitor 就是一种同步机制，每个对象实例都会有一个Monitor对象，一同创建一同销毁。（也就是我们说的锁）
 
 JVM中同步是基于进入和退出监视器对象来实现的
+
+CompletableFuture，是一个多线程异步并发，并且能不阻塞。使得挨个挨个的调度，变成了异步编排
+
+IO密集性（阻塞系数），还是CPU密集性（CPU核数+1）

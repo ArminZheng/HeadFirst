@@ -1,8 +1,11 @@
 package com.arminzheng.concurrent.senior;
 
+import com.arminzheng.concurrent.FutureTest;
+
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
+import java.util.concurrent.FutureTask;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -45,6 +48,8 @@ public class CompletableFutureDemo {
             return null;
         });
         System.out.println("Main 正在继续");
+        System.out.println("future.get() = " + future.get()); // 旧版，原来的FutureTask的方式（与whenComplete()方法有一定区别）
+        System.out.println("future.join() = " + future.join()); // 与get()相同，但不会抛出异常
 
         threadPoolExecutor.shutdown();
     }
@@ -70,5 +75,12 @@ public class CompletableFutureDemo {
             return 1024;
         }, threadPoolExecutor);
         System.out.println("integerCompletableFuture2.get() = " + integerCompletableFuture2.get());
+    }
+
+    private static void demo2() throws ExecutionException, InterruptedException {
+        FutureTask<Boolean> task = new FutureTask<>(new FutureTest());
+        new Thread(task, "futureTask").start();
+        Boolean a = task.get();
+        System.out.println("a = " + a);
     }
 }
