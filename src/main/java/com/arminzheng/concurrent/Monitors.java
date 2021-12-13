@@ -1,7 +1,7 @@
 package com.arminzheng.concurrent;
 
 /**
- * Monitors
+ * Monitors 管程例子，生产者消费者模型
  *
  * @author armin
  * @version 2021/12/11
