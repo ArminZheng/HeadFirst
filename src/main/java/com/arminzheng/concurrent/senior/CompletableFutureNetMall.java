@@ -36,6 +36,13 @@ public class CompletableFutureNetMall {
 
     }
 
+    public static List<String> getPriceByParallel(List<NetMall> list, String productName) {
+        // parallel并行
+        return list.stream().parallel().map(
+                        f -> String.format(productName + " in %s price is %.2f", f.getMallName(), f.calcPrice(productName)))
+                .collect(Collectors.toList());
+    }
+
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
         List<String> mysql = getPriceByStep(list, "mysql");
@@ -48,6 +55,15 @@ public class CompletableFutureNetMall {
         java.forEach(System.out::println);
         long endTime2 = System.currentTimeMillis();
         System.out.println("--costTime: " + (endTime2 - startTime2) + " 毫秒");
+
+        long startTime3 = System.currentTimeMillis();
+        {
+            List<String> mangodb = getPriceByParallel(list, "mangodb");
+            mangodb.forEach(System.out::println);
+        }
+        long endTime3 = System.currentTimeMillis();
+        System.out.println("--time cost: " + (endTime3 - startTime3) + " 毫秒");
+
     }
 }
 
