@@ -1,4 +1,7 @@
-package com.arminzheng.decorator;
+package com.arminzheng.decorator.decorator;
+
+import com.arminzheng.decorator.Beverage;
+import com.arminzheng.decorator.CondimentDecorator;
 
 /**
  * @author Armin Zheng
@@ -7,7 +10,7 @@ package com.arminzheng.decorator;
 public class Mocha extends CondimentDecorator {
 
     public Mocha(Beverage beverage) {
-        this.beverage = beverage;
+        super(beverage);
     }
 
     @Override

@@ -1,4 +1,6 @@
-package com.arminzheng.decorator;
+package com.arminzheng.decorator.beverage;
+
+import com.arminzheng.decorator.Beverage;
 
 /**
  * @author Armin Zheng

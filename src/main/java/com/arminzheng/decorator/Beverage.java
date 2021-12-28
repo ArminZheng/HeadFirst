@@ -7,7 +7,7 @@ package com.arminzheng.decorator;
  * @since 2021-09-07
  */
 public abstract class Beverage {
-    String description = "Unknown Beverage";
+    protected String description = "Unknown Beverage";
 
     public String getDescription() {
         return description;

@@ -10,4 +10,13 @@ public abstract class CondimentDecorator extends Beverage {
     protected Beverage beverage;
 
     public abstract String getDescription();
+
+    public CondimentDecorator(Beverage beverage) {
+        this.beverage = beverage;
+    }
+
+    @Override
+    public double cost() {
+        return beverage.cost();
+    }
 }
