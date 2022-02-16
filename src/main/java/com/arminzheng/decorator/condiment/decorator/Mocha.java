@@ -1,4 +1,4 @@
-package com.arminzheng.decorator.decorator;
+package com.arminzheng.decorator.condiment.decorator;
 
 import com.arminzheng.decorator.Beverage;
 import com.arminzheng.decorator.CondimentDecorator;
