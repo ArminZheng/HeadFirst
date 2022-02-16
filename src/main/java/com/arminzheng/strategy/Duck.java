@@ -6,8 +6,8 @@ package com.arminzheng.strategy;
  */
 public abstract class Duck {
 
-    FlyBehavior flyBehavior;
-    QuackBehavior quackBehavior;
+    protected FlyBehavior flyBehavior;
+    protected QuackBehavior quackBehavior;
 
     public Duck() {
     }
@@ -20,7 +20,7 @@ public abstract class Duck {
         quackBehavior = qb;
     }
 
-    abstract void display();
+    protected abstract void display();
 
     public void performFly() {
         flyBehavior.fly();
