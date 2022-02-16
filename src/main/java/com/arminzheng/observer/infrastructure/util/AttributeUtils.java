@@ -92,7 +92,8 @@ public class AttributeUtils {
             System.out.println("anInterface = " + anInterface);
             System.out.println("anInterface = " + Arrays.stream(anInterface.getInterfaces()).collect(Collectors.toList()));
         }
-        System.out.println("NumberInteger.class.isAssignableFrom(Integer.class) = " + Number.class.isAssignableFrom(Integer.class));
+        System.out.println("Number.class.isAssignableFrom(Integer.class) = " + Number.class.isAssignableFrom(Integer.class));
+        // Number.class.isAssignableFrom(Integer.class) = true
 
         // Type gc = target.getClass().getGenericSuperclass();
         // ((ParameterizedType) gc).getActualTypeArguments();
