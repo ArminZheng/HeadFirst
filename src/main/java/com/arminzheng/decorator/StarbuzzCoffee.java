@@ -3,9 +3,9 @@ package com.arminzheng.decorator;
 import com.arminzheng.decorator.beverage.DarkRoast;
 import com.arminzheng.decorator.beverage.Espresso;
 import com.arminzheng.decorator.beverage.HouseBlend;
-import com.arminzheng.decorator.decorator.Mocha;
-import com.arminzheng.decorator.decorator.Soy;
-import com.arminzheng.decorator.decorator.Whip;
+import com.arminzheng.decorator.condiment.decorator.Mocha;
+import com.arminzheng.decorator.condiment.decorator.Soy;
+import com.arminzheng.decorator.condiment.decorator.Whip;
 
 /**
  * @author Armin Zheng
