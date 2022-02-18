@@ -1,5 +1,6 @@
-package com.arminzheng.factory.method;
+package com.arminzheng.factory.method.store;
 
+import com.arminzheng.factory.method.Pizza;
 import com.arminzheng.factory.method.pizza.*;
 
 public class DependentPizzaStore {
