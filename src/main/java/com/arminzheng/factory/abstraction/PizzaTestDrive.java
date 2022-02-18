@@ -1,5 +1,8 @@
 package com.arminzheng.factory.abstraction;
 
+import com.arminzheng.factory.abstraction.store.ChicagoPizzaStore;
+import com.arminzheng.factory.abstraction.store.NYPizzaStore;
+
 public class PizzaTestDrive {
 
   public static void main(String[] args) {

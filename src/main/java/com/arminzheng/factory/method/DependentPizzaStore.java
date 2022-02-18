@@ -1,5 +1,7 @@
 package com.arminzheng.factory.method;
 
+import com.arminzheng.factory.method.pizza.*;
+
 public class DependentPizzaStore {
 
   public Pizza createPizza(String style, String type) {

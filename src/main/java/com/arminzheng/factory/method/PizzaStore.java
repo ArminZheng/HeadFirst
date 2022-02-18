@@ -8,7 +8,7 @@ public abstract class PizzaStore {
    * @param item 类型
    * @return 生产对象
    */
-  abstract Pizza createPizza(String item);
+  protected abstract Pizza createPizza(String item);
 
   public Pizza orderPizza(String type) {
     Pizza pizza = createPizza(type);

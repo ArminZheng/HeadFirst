@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Pizza {
-  String name;
-  String dough;
-  String sauce;
-  List<String> toppings = new ArrayList<>();
+  protected String name;
+  protected String dough;
+  protected String sauce;
+  protected List<String> toppings = new ArrayList<>();
 
-  void prepare() {
+  protected void prepare() {
     System.out.println("Prepare " + name);
     System.out.println("Tossing dough...");
     System.out.println("Adding sauce...");
@@ -19,15 +19,15 @@ public abstract class Pizza {
     }
   }
 
-  void bake() {
+  protected void bake() {
     System.out.println("Bake for 25 minutes at 350");
   }
 
-  void cut() {
+  protected void cut() {
     System.out.println("Cut the pizza into diagonal slices");
   }
 
-  void box() {
+  protected void box() {
     System.out.println("Place pizza in official PizzaStore box");
   }
 

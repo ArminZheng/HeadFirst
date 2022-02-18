@@ -1,5 +1,8 @@
 package com.arminzheng.factory.method;
 
+import com.arminzheng.factory.method.store.ChicagoPizzaStore;
+import com.arminzheng.factory.method.store.NYPizzaStore;
+
 public class PizzaTestDrive {
 
   public static void main(String[] args) {

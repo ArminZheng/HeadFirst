@@ -1,40 +1,42 @@
 package com.arminzheng.factory.abstraction;
 
+import com.arminzheng.factory.abstraction.condiment.*;
+
 public abstract class Pizza {
-  String name;
+  protected String name;
 
-  Dough dough;
-  Sauce sauce;
-  Veggies veggies[];
-  Cheese cheese;
-  Pepperoni pepperoni;
-  Clams clam;
+  protected Dough dough;
+  protected Sauce sauce;
+  protected Veggies[] veggies;
+  protected Cheese cheese;
+  protected Pepperoni pepperoni;
+  protected Clams clam;
 
-  abstract void prepare();
+  protected abstract void prepare();
 
-  void bake() {
+  protected void bake() {
     System.out.println("Bake for 25 minutes at 350");
   }
 
-  void cut() {
+  protected void cut() {
     System.out.println("Cutting the pizza into diagonal slices");
   }
 
-  void box() {
+  protected void box() {
     System.out.println("Place pizza in official PizzaStore box");
   }
 
-  String getName() {
+  public String getName() {
     return name;
   }
 
-  void setName(String name) {
+  public void setName(String name) {
     this.name = name;
   }
 
   public String toString() {
-    StringBuffer result = new StringBuffer();
-    result.append("---- " + name + " ----\n");
+    StringBuilder result = new StringBuilder();
+    result.append("---- ").append(name).append(" ----\n");
     if (dough != null) {
       result.append(dough);
       result.append("\n");

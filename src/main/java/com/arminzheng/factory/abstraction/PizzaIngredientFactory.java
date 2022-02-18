@@ -1,5 +1,7 @@
 package com.arminzheng.factory.abstraction;
 
+import com.arminzheng.factory.abstraction.condiment.*;
+
 public interface PizzaIngredientFactory {
 
   public Dough createDough();
