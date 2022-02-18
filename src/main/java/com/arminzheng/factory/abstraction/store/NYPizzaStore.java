@@ -4,7 +4,7 @@ import com.arminzheng.factory.abstraction.pizza.PepperoniPizza;
 import com.arminzheng.factory.abstraction.Pizza;
 import com.arminzheng.factory.abstraction.PizzaIngredientFactory;
 import com.arminzheng.factory.abstraction.PizzaStore;
-import com.arminzheng.factory.abstraction.condiment.impl.VeggiePizza;
+import com.arminzheng.factory.abstraction.pizza.VeggiePizza;
 import com.arminzheng.factory.abstraction.factory.NYPizzaIngredientFactory;
 import com.arminzheng.factory.abstraction.pizza.CheesePizza;
 import com.arminzheng.factory.abstraction.pizza.ClamPizza;

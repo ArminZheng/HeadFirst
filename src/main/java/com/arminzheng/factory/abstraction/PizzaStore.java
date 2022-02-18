@@ -8,9 +8,9 @@ public abstract class PizzaStore {
     Pizza pizza = createPizza(type);
     System.out.println("--- Making a " + pizza.getName() + " ---");
     pizza.prepare();
-    pizza.bake();
-    pizza.cut();
-    pizza.box();
+    pizza.bake(); // 烘焙
+    pizza.cut(); // 切块
+    pizza.box(); // 装箱
     return pizza;
   }
 }

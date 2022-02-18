@@ -1,7 +1,7 @@
 package com.arminzheng.factory.abstraction.store;
 
 import com.arminzheng.factory.abstraction.*;
-import com.arminzheng.factory.abstraction.condiment.impl.VeggiePizza;
+import com.arminzheng.factory.abstraction.pizza.VeggiePizza;
 import com.arminzheng.factory.abstraction.factory.ChicagoPizzaIngredientFactory;
 import com.arminzheng.factory.abstraction.PizzaIngredientFactory;
 import com.arminzheng.factory.abstraction.pizza.CheesePizza;

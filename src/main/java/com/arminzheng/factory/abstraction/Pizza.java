@@ -3,14 +3,14 @@ package com.arminzheng.factory.abstraction;
 import com.arminzheng.factory.abstraction.condiment.*;
 
 public abstract class Pizza {
-  protected String name;
+  protected String name; // 名称: 在store.createPizza中被设置
 
-  protected Dough dough;
-  protected Sauce sauce;
-  protected Veggies[] veggies;
-  protected Cheese cheese;
-  protected Pepperoni pepperoni;
-  protected Clams clam;
+  protected Dough dough; // 生面团
+  protected Sauce sauce; // 酱，调味汁
+  protected Veggies[] veggies; // 素菜
+  protected Cheese cheese; // 奶酪
+  protected Pepperoni pepperoni; // 意大利辣肉肠
+  protected Clams clam; // 蚌，蛤蜊
 
   public abstract void prepare();
 

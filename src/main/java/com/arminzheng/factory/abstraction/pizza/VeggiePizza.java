@@ -1,4 +1,4 @@
-package com.arminzheng.factory.abstraction.condiment.impl;
+package com.arminzheng.factory.abstraction.pizza;
 
 import com.arminzheng.factory.abstraction.Pizza;
 import com.arminzheng.factory.abstraction.PizzaIngredientFactory;
@@ -10,7 +10,7 @@ public class VeggiePizza extends Pizza {
     this.ingredientFactory = ingredientFactory;
   }
 
-  protected void prepare() {
+  public void prepare() {
     System.out.println("Preparing " + name);
     dough = ingredientFactory.createDough();
     sauce = ingredientFactory.createSauce();
