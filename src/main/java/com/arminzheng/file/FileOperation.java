@@ -69,6 +69,9 @@ public class FileOperation {
       output.write(111); // o
       output.flush();
       output.write(" World".getBytes(StandardCharsets.UTF_8)); // echo " World" > file # 注意不是 >>
+      // 附加到文件末尾。使用FileWriter，传入第二个参数true（末尾新增时不会自动换行）
+      FileWriter writer = new FileWriter(file, true);
+      writer.write(72);
     } catch (IOException e) {
       e.printStackTrace();
     }
