@@ -10,12 +10,14 @@ import java.util.List;
 /**
  * FilesOperation
  *
+ * <p>从Java 7开始，提供了Files和Paths这两个工具类，能极大地方便我们读写文件。
+ *
  * @author zy
  * @version 2022/2/18
  */
 public class FilesOperation {
   /**
-   * Files工具类还有copy()、delete()、exists()、move()等快捷方法操作文件和目录。
+   * Files工具类还有createFile()、exists()、copy()、delete()、move()等快捷方法操作文件和目录，入参都是Path。
    *
    * <p>Files提供的读写方法，受内存限制，只能读写小文件，例如配置文件等，不可一次读入几个G的大文件。
    *
@@ -23,6 +25,10 @@ public class FilesOperation {
    */
   public static void main(String[] args) {
     try {
+      if (!Files.exists(Paths.get("test.txt"))) {
+        Files.createFile(Paths.get("test.txt"));
+      }
+
       byte[] readAllBytes = Files.readAllBytes(Paths.get("test.txt"));
       // 只适合读小文件
       System.out.println("readAllBytes = " + new String(readAllBytes, StandardCharsets.UTF_8));

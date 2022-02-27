@@ -30,7 +30,10 @@ public class FileInformation {
    *
    * <p>存在的问题：1. 文件的读取和写入还未解决
    *
-   * @param args
+   * <p>从Java 7开始，提供了Files和Paths这两个工具类，能极大地方便我们读写文件。
+   *
+   * @see FilesOperation
+   * @param args 命令行
    */
   public static void main(String[] args) throws IOException {
     System.out.println(File.separator);
