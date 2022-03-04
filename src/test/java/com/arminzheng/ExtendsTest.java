@@ -1,3 +1,5 @@
+package com.arminzheng;
+
 /**
  * @author Armin Zheng
  * @since 2021-08-24
@@ -31,7 +33,7 @@ class Parent {
 
     @Override
     public String toString() {
-        return "Parent{" +
+        return "com.arminzheng.Parent{" +
                 "a=" + a +
                 '}';
     }

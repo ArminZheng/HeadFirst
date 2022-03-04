@@ -1,6 +1,6 @@
 package com.arminzheng.factory.abstraction.factory;
 
-import com.arminzheng.factory.abstraction.*;
+import com.arminzheng.factory.abstraction.PizzaIngredientFactory;
 import com.arminzheng.factory.abstraction.condiment.*;
 import com.arminzheng.factory.abstraction.condiment.impl.*;
 

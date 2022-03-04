@@ -1,3 +1,5 @@
+package com.arminzheng;
+
 import com.arminzheng.observer.infrastructure.util.AttributeUtils;
 import com.arminzheng.observer.pojo.Person;
 import com.arminzheng.observer.pojo.Student;

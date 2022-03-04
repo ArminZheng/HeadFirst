@@ -1,6 +1,5 @@
 package com.arminzheng.observer;
 
-import com.arminzheng.observer.weather.Observer;
 import com.arminzheng.observer.weather.impl.CurrentConditionsDisplay;
 import com.arminzheng.observer.weather.impl.HeatIndexDisplay;
 import com.arminzheng.observer.weather.impl.WeatherData;

@@ -1,4 +1,4 @@
-package function;
+package com.arminzheng.function;
 
 public class FunctionTest {
     public void a(Integer param1, int param2) {

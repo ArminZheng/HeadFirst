@@ -1,3 +1,5 @@
+package com.arminzheng;
+
 import java.util.stream.Stream;
 
 /**

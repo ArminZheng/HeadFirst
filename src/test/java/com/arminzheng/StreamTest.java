@@ -1,3 +1,5 @@
+package com.arminzheng;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -128,7 +130,7 @@ class Student {
         }
 
         public String toString() {
-            return "Student.StudentBuilder(gradeId=" + this.gradeId + ", classId=" + this.classId + ", name=" + this.name + ", score=" + this.score + ")";
+            return "com.arminzheng.Student.StudentBuilder(gradeId=" + this.gradeId + ", classId=" + this.classId + ", name=" + this.name + ", score=" + this.score + ")";
         }
     }
 

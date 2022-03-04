@@ -1,3 +1,5 @@
+package com.arminzheng;
+
 public class BitMapTest {
   public static void main(String[] args) {
     String s = "abcbzxyw";
