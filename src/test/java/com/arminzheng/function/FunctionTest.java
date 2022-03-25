@@ -1,5 +1,7 @@
 package com.arminzheng.function;
 
+import java.util.function.Consumer;
+
 public class FunctionTest {
     public void a(Integer param1, int param2) {
         System.out.println("i1 = " + param1 + param2);
@@ -12,6 +14,13 @@ public class FunctionTest {
         m.d(test2, 1, 3);
         MyInter m2 = (t, p1, p2) -> t.speak(p1, p2);//默认是Test2
         m2.d(test2, 1, 3);
+
+        Consumer<Long> ss = FunctionTest::consume; // 有返回值也可以塞进 Consumer
+        ss.accept(1L);
+    }
+
+    static String consume(Long s) {
+        return s.toString();
     }
 }
 
