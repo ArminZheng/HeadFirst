@@ -1,10 +1,10 @@
-package com.arminzheng.command.remote;
+package com.arminzheng.command;
 
-import com.arminzheng.command.Command;
-import com.arminzheng.command.GarageDoorOpenCommand;
-import com.arminzheng.command.LightOffCommand;
-import com.arminzheng.command.LightOnCommand;
-import com.arminzheng.command.NoCommand;
+import com.arminzheng.command.command.Command;
+import com.arminzheng.command.command.GarageDoorOpenCommand;
+import com.arminzheng.command.command.LightOffCommand;
+import com.arminzheng.command.command.LightOnCommand;
+import com.arminzheng.command.command.NoCommand;
 import com.arminzheng.command.item.GarageDoor;
 import com.arminzheng.command.item.Light;
 
@@ -32,6 +32,23 @@ public class RemoteControlWithUndo {
         undoCommand = noCommand;
     }
 
+    public static void main(String[] args) {
+        RemoteControlWithUndo remote = new RemoteControlWithUndo();
+        Light light = new Light("Studio");
+        LightOnCommand lightOn = new LightOnCommand(light);
+        LightOffCommand lightOff = new LightOffCommand(light);
+        GarageDoor garageDoor = new GarageDoor();
+        GarageDoorOpenCommand garageDoorOpen = new GarageDoorOpenCommand(garageDoor);
+        remote.setCommand(1, lightOn, lightOff);
+
+        remote.offButtonWasPressed(0);
+        remote.onButtonWasPressed(0);
+        remote.undoButtonWasPressed();
+
+        remote.offButtonWasPressed(1);
+        remote.undoButtonWasPressed();
+    }
+
     public void setCommand(int slot, Command onCommand, Command offCommand) {
         onCommands[slot] = onCommand;
         offCommands[slot] = offCommand;
@@ -49,22 +66,5 @@ public class RemoteControlWithUndo {
 
     public void undoButtonWasPressed() {
         undoCommand.undo();
-    }
-
-    public static void main(String[] args) {
-        RemoteControlWithUndo remote = new RemoteControlWithUndo();
-        Light light = new Light("Studio");
-        LightOnCommand lightOn = new LightOnCommand(light);
-        LightOffCommand lightOff = new LightOffCommand(light);
-        GarageDoor garageDoor = new GarageDoor();
-        GarageDoorOpenCommand garageDoorOpen = new GarageDoorOpenCommand(garageDoor);
-        remote.setCommand(1, lightOn, lightOff);
-
-        remote.offButtonWasPressed(0);
-        remote.onButtonWasPressed(0);
-        remote.undoButtonWasPressed();
-
-        remote.offButtonWasPressed(1);
-        remote.undoButtonWasPressed();
     }
 }

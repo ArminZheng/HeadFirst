@@ -12,7 +12,7 @@ public class CeilingFan {
     public static final int MEDIUM = 2;
     public static final int LOW = 1;
     public static final int OFF = 0;
-    String location ;
+    String location;
     int speed;
 
     public CeilingFan(String location) {

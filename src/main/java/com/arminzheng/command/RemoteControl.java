@@ -1,10 +1,10 @@
-package com.arminzheng.command.remote;
+package com.arminzheng.command;
 
-import com.arminzheng.command.Command;
-import com.arminzheng.command.GarageDoorOpenCommand;
-import com.arminzheng.command.LightOffCommand;
-import com.arminzheng.command.LightOnCommand;
-import com.arminzheng.command.NoCommand;
+import com.arminzheng.command.command.Command;
+import com.arminzheng.command.command.GarageDoorOpenCommand;
+import com.arminzheng.command.command.LightOffCommand;
+import com.arminzheng.command.command.LightOnCommand;
+import com.arminzheng.command.command.NoCommand;
 import com.arminzheng.command.item.GarageDoor;
 import com.arminzheng.command.item.Light;
 
@@ -30,19 +30,6 @@ public class RemoteControl {
         }
     }
 
-    public void setCommand(int slot, Command onCommand, Command offCommand) {
-        onCommands[slot] = onCommand;
-        offCommands[slot] = offCommand;
-    }
-
-    public void onButtonWasPressed(int slot) {
-        onCommands[slot].execute();
-    }
-
-    public void offButtonWasPressed(int slot) {
-        offCommands[slot].execute();
-    }
-
     public static void main(String[] args) {
         RemoteControl remote = new RemoteControl();
         Light light = new Light("Kitchen");
@@ -57,5 +44,18 @@ public class RemoteControl {
         remote.onButtonWasPressed(1);
         // remote.setCommand(garageDoorOpen);
         // remote.buttonWasPressed();
+    }
+
+    public void setCommand(int slot, Command onCommand, Command offCommand) {
+        onCommands[slot] = onCommand;
+        offCommands[slot] = offCommand;
+    }
+
+    public void onButtonWasPressed(int slot) {
+        onCommands[slot].execute();
+    }
+
+    public void offButtonWasPressed(int slot) {
+        offCommands[slot].execute();
     }
 }

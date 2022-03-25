@@ -1,4 +1,4 @@
-package com.arminzheng.command;
+package com.arminzheng.command.command;
 
 /**
  * Command

@@ -1,4 +1,4 @@
-package com.arminzheng.command;
+package com.arminzheng.command.command;
 
 import com.arminzheng.command.item.Light;
 
@@ -8,7 +8,7 @@ import com.arminzheng.command.item.Light;
  * @author zy
  * @version 2022/3/25
  */
-public class LightOffCommand implements Command {
+public class LightOnCommand implements Command {
 
     Light light;
 
@@ -17,19 +17,19 @@ public class LightOffCommand implements Command {
      *
      * @param light 组合的功能对象
      */
-    public LightOffCommand(Light light) {
+    public LightOnCommand(Light light) {
         this.light = light;
     }
 
     @Override
     public void execute() {
-        light.off();
+        light.on();
     }
 
     @Override
     public void undo() {
         System.out.println(">>>>>>caution! undoing...");
-        light.on();
+        light.off();
         System.out.println("<<<<<<undo done");
     }
 }

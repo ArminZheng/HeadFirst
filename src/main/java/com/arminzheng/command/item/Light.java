@@ -8,7 +8,7 @@ package com.arminzheng.command.item;
  */
 public class Light {
 
-    private String name;
+    private final String name;
 
     public Light(String name) {
         this.name = name;

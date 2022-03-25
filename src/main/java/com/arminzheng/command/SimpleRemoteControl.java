@@ -1,8 +1,8 @@
-package com.arminzheng.command.remote;
+package com.arminzheng.command;
 
-import com.arminzheng.command.Command;
-import com.arminzheng.command.GarageDoorOpenCommand;
-import com.arminzheng.command.LightOnCommand;
+import com.arminzheng.command.command.Command;
+import com.arminzheng.command.command.GarageDoorOpenCommand;
+import com.arminzheng.command.command.LightOnCommand;
 import com.arminzheng.command.item.GarageDoor;
 import com.arminzheng.command.item.Light;
 
@@ -19,18 +19,6 @@ public class SimpleRemoteControl {
     public SimpleRemoteControl() {
     }
 
-    public void setCommand(Command slot) {
-        this.slot = slot;
-    }
-
-    public void buttonWasPressed() {
-        slot.execute();
-    }
-
-    public void undoButtonWasPressed() {
-        slot.undo();
-    }
-
     public static void main(String[] args) {
         SimpleRemoteControl remote = new SimpleRemoteControl();
         Light light = new Light("Living Room");
@@ -41,5 +29,17 @@ public class SimpleRemoteControl {
         remote.buttonWasPressed();
         remote.setCommand(garageDoorOpen);
         remote.buttonWasPressed();
+    }
+
+    public void setCommand(Command slot) {
+        this.slot = slot;
+    }
+
+    public void buttonWasPressed() {
+        slot.execute();
+    }
+
+    public void undoButtonWasPressed() {
+        slot.undo();
     }
 }
