@@ -45,11 +45,12 @@ public class BeanFactory {
      * @param key properties的key
      * @return bean
      */
-    public static Object getBean(String key) {
-        Object ret = null;
+    @SuppressWarnings("unchecked")
+    public static <T> T getBean(String key) {
+        T ret = null;
         try {
             Class<?> clz = Class.forName(env.getProperty(key));
-            ret = clz.newInstance();
+            ret = (T) clz.newInstance();
         } catch (Exception e) {
             e.printStackTrace();
         }

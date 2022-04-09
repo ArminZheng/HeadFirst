@@ -8,6 +8,9 @@ package com.arminzheng.factory.strategy;
  */
 public class UserController {
 
+    /**
+     * final 更适合没有get/set方法的属性（可设为public仅供访问）
+     */
     private final UserService userService = BeanFactory.getUserService();
 
     public String queryUser() {
@@ -16,7 +19,7 @@ public class UserController {
     }
 
     public void getUserInfo() {
-        UserService userService = (UserService) BeanFactory.getBean("userService");
+        UserService userService = BeanFactory.getBean("userService");
         userService.getUserInfo();
     }
 
