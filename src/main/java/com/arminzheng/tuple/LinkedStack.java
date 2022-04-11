@@ -7,29 +7,20 @@ package com.arminzheng.tuple;
  * @version 2022/4/9
  */
 public final class LinkedStack<T> {
-    private static class Node<U> {
-        U item;
-        Node<U> next;
 
-        Node() {
-            item = null;
-            next = null;
-        }
+    private Node top = new Node(); // End sentinel
 
-        Node(U item, Node<U> next) {
-            this.item = item;
-            this.next = next;
-        }
-
-        boolean end() {
-            return item == null && next == null;
+    public static void main(String[] args) {
+        LinkedStack<String> lss = new LinkedStack<>();
+        for (String s : "Phaser's on stun!".split(" ")) lss.push(s);
+        String s;
+        while ((s = lss.pop()) != null) {
+            System.out.println(s);
         }
     }
 
-    private Node<T> top = new Node<>(); // End sentinel
-
     public void push(T item) {
-        top = new Node<>(item, top);
+        top = new Node(item, top);
     }
 
     public T pop() {
@@ -40,13 +31,23 @@ public final class LinkedStack<T> {
         return result;
     }
 
-    public static void main(String[] args) {
-        LinkedStack<String> lss = new LinkedStack<>();
-        for (String s : "Phaser's on stun!".split(" "))
-            lss.push(s);
-        String s;
-        while ((s = lss.pop())                                                                                                                                                                                                                 != null) {
-            System.out.println(s);
+    /** 内部类可以访问其外部类的类型参数（去掉static静态内部类是独立的类） */
+    private class Node {
+        T item;
+        Node next;
+
+        Node() {
+            item = null;
+            next = null;
+        }
+
+        Node(T item, Node next) {
+            this.item = item;
+            this.next = next;
+        }
+
+        boolean end() {
+            return item == null && next == null;
         }
     }
 }
