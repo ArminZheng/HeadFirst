@@ -16,7 +16,8 @@ public class BeanFactory {
     private static final Properties env = new Properties();
 
     static {
-        try (InputStream inputStream = BeanFactory.class.getResourceAsStream("/applicationContext.properties")) {
+        try (InputStream inputStream =
+                BeanFactory.class.getResourceAsStream("/applicationContext.properties")) {
             env.load(inputStream);
         } catch (IOException e) {
             e.printStackTrace();
@@ -33,7 +34,11 @@ public class BeanFactory {
         try {
             Class<?> userServiceClz = Class.forName(env.getProperty("userService"));
             userService = (UserService) userServiceClz.getConstructor().newInstance();
-        } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
+        } catch (ClassNotFoundException
+                | NoSuchMethodException
+                | InstantiationException
+                | IllegalAccessException
+                | InvocationTargetException e) {
             e.printStackTrace();
         }
         return userService;
