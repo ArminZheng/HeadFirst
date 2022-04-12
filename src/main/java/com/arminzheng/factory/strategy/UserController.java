@@ -27,6 +27,6 @@ public class UserController {
         UserService userService = BeanFactory.getBean("userService");
         userService.getUserInfo();
         BeanFactory.m(BeanFactory.getBean("userService"));
-        BeanFactory.f(BeanFactory.map());
+        BeanFactory.f(BeanFactory.<UserService, UserController>map()); // 显式地指明类型：this或类名.尖括号+方法名
     }
 }
