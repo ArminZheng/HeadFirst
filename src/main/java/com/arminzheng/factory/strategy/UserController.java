@@ -26,5 +26,7 @@ public class UserController {
     public void getUserInfo() {
         UserService userService = BeanFactory.getBean("userService");
         userService.getUserInfo();
+        BeanFactory.m(BeanFactory.getBean("userService"));
+        BeanFactory.f(BeanFactory.map());
     }
 }

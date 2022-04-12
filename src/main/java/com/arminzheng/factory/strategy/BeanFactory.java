@@ -3,6 +3,8 @@ package com.arminzheng.factory.strategy;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 /**
@@ -61,4 +63,21 @@ public class BeanFactory {
         }
         return ret;
     }
+
+    /**
+     * getBean() 和本方法都使用了类型参数推断。当作为参数传递时，编译器不会执行类型推断
+     *
+     * @param <K>
+     * @param <V>
+     * @return
+     */
+    public static <K, V> Map<K, V> map() {
+        return new HashMap<>();
+    }
+
+    public static <T> void m(T t) {
+        System.out.println(t.getClass().getName());
+    }
+
+    public static void f(Map<UserService, UserController> h) {}
 }
