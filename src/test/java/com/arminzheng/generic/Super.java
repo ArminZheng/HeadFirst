@@ -26,6 +26,18 @@ public class Super {
         list.removeAll(removeList);
         return list;
     }
+    public static List<Double> removeDoubleIf(List<Double> list, Filter<? super Double> filter) {
+        List<Double> removeList = new ArrayList<>();
+        for (Double e : list) {
+            // 逆变规定：只能传入 Double。在里面调用的是 通用(父类)方法，哪怕传入的是子类。
+            if (filter.test(e)) {
+                // Super：本质是父类，限定了子类，适合限定消费子类的父类。
+                removeList.add(e);
+            }
+        }
+        list.removeAll(removeList);
+        return list;
+    }
 
     public static void main(String[] args) {
         List<Short> shortList = new ArrayList<Short>() {{
